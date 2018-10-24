@@ -115,7 +115,9 @@ export default class DrillableObjectView extends PureComponent {
         value={subValue}
         key={`${keyName}:${subkeyName}`}
       />
-    ));
+    )).sort((a, b) => {
+        return a.props.keyName.localeCompare(b.props.keyName);
+    });
 
     return (
       <TouchableOpacity style={{ marginLeft }} onPress={this.toggleOpen}>
