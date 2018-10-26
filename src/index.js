@@ -116,7 +116,9 @@ export default class DrillableObjectView extends PureComponent {
         key={`${keyName}:${subkeyName}`}
       />
     )).sort((a, b) => {
-        return a.props.keyName.localeCompare(b.props.keyName);
+        value1 = new String(a.props.keyName);
+        value2 = new String(b.props.keyName);
+        return value1.localeCompare(value2);
     });
 
     return (
